@@ -37,5 +37,5 @@ requireDir('./gulp/tasks', {
  */
 gulp.task('default', ['clean'], function (cb) {
   console.log('gulp default task');
-  runSequence('styles', ['jshint', 'html', 'images', 'fonts', 'copy'], cb);
+  runSequence('styles', [/*'jshint',*/ 'html', 'images', 'fonts', 'copy'], cb);
 });
