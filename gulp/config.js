@@ -8,6 +8,7 @@ let extensions = {
   css: '.css',
   sass: '.scss',
   html: '.html'
+  //TODO: add fonts
 };
 
 let folders = {
@@ -18,6 +19,7 @@ let folders = {
   styles: '/styles',
   scripts: '/scripts',
   images: '/images',
+  fonts: '/fonts',
   typings: './typings',
   nodeModules: './node_modules',
   jspmPackages: './jspm_packages'
@@ -35,7 +37,8 @@ let globs = {
     vendor: folders.styles + '/vendor{' + extensions.sass + ',' + extensions.css + '}'
   },
   images: folders.images + '/**/*',
-  html: '/**/*' + extensions.html
+  html: '/**/*' + extensions.html,
+  fonts: '/**/*' //TODO: add font extensions
 };
 
 let files = {
@@ -116,6 +119,13 @@ let html = {
   dest: folders.dist
 };
 
+let fonts = {
+  src: [
+    folders.app + globs.fonts
+  ],
+  dest: folders.dist + folders.fonts
+};
+
 let copy = {
   src: [
     folders.app + globs.any,
@@ -126,6 +136,7 @@ let copy = {
     utils.exclude(folders.app + globs.styles.sass),
     utils.exclude(folders.app + globs.scripts.javascript),
     utils.exclude(folders.app + globs.scripts.typescript)
+    //TODO: add fonts, maybe?
   ],
   dest: folders.dist
 };
@@ -159,6 +170,7 @@ module.exports = {
   styles,
   images,
   html,
+  fonts,
   copy,
   autoprefixerBrowsers,
   minifyCss,
