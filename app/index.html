@@ -65,7 +65,11 @@
     </main>
 
     <!-- build:js scripts/main.min.js -->
-    <script src="scripts/main.js"></script>
+    <script src="jspm_packages/system.src.js"></script>
+    <script src="config.js"></script>
+    <script>
+      System.import('scripts/main.js');
+    </script>
     <!-- endbuild -->
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
