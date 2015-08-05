@@ -1,5 +1,5 @@
 {
-  "name": "Angular2 Boilerplate",
+  "name": "angular20-boilerplate",
   "description": "Angular2 Boilerplate with Gulp, jspm, TypeScript, PostCSS, BrowserSync, Webpack",
   "author": "Bob Monteverde <bob@montev.com> (http://montev.com/)",
   "contributors": [
@@ -32,6 +32,8 @@
   },
   "dependencies": {},
   "devDependencies": {
+    "babel": "5.8.x",
+    "babel-core": "5.8.x",
     "del": "1.2.x",
     "gulp": "3.9.x",
     "gulp-help": "1.6.x",
