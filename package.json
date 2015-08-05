@@ -31,8 +31,12 @@
   }
   "dependencies": {},
   "devDependencies": {
+    "del": "1.2.x",
     "gulp": "3.9.x",
     "gulp-help": "1.6.x",
+    "gulp-notify": "2.2.x",
+    "gulp-plumber": "1.0.x",
+    "gulp-util": "3.0.x",
     "require-dir": "0.3.x"
   }
 }
