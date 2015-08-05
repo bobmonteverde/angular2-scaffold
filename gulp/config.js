@@ -97,7 +97,8 @@ let styles = {
     folders.app + globs.styles.sass,
     utils.exclude(folders.app + globs.styles.vendor)
   ],
-  dest: folders.temp, // during DEV
+  //dest: folders.temp, // during DEV
+  dest: folders.temp + folders.styles, // during DEV
   destDist: folders.dist + folders.styles, // for PROD
   finalCssBundleFilename: 'bundle.min.css',
   finalCssBundlePath: folders.styles + '/bundle.min.css',
