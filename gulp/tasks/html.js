@@ -26,7 +26,7 @@ gulp.task('html', 'Optimize HTML', () =>{
   }))
 
   // Minify HTML
-  .pipe($.iff(config.files.any + config.extensions.html, $.minifyHtml()))
+  .pipe($.if(config.files.any + config.extensions.html, $.minifyHtml()))
 
   // Output files
   .pipe(gulp.dest(config.html.dest))
