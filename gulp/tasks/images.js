@@ -19,7 +19,7 @@ gulp.task('images', 'Optimize images', () =>{
   //.pipe($.debug({title: 'Stream contents:', minimal: true}))
 
   // Minify and cache
-  .pipe($.cache($.imageMin({
+  .pipe($.cache($.imagemin({
     progressive: true,
     interlaced: true
   })))
