@@ -35,6 +35,7 @@
     "babel": "5.8.x",
     "babel-core": "5.8.x",
     "del": "1.2.x",
+    "event-stream": "3.3.x",
     "gulp": "3.9.x",
     "gulp-cache": "0.2.x",
     "gulp-help": "1.6.x",
@@ -47,6 +48,7 @@
     "gulp-plumber": "1.0.x",
     "gulp-size": "1.2.x",
     "gulp-util": "3.0.x",
-    "require-dir": "0.3.x"
+    "require-dir": "0.3.x",
+    "run-sequence": "^1.1.2"
   }
 }

@@ -16,6 +16,7 @@
 
 import gulp from 'gulp';
 import requireDir from 'require-dir';
+import runSequence from 'run-sequence';
 import gulpLoadPlugins from 'gulp-load-plugins';
 
 const $ = gulpLoadPlugins();
