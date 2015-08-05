@@ -35,7 +35,7 @@ requireDir('./gulp/tasks', {
  *  Default task clean temporaries directories and launch the
  *  main optimization build task
  */
-gulp.task('default', ['clean'], function () {
+gulp.task('default', ['clean'], function (cb) {
   console.log('gulp default task');
-  //gulp.start('build');
+  runSequence('styles', ['jshint', 'html', 'images', 'fonts', 'copy'], cb);
 });
