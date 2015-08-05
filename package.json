@@ -1,4 +1,26 @@
 {
+  "name": "Angular2 Boilerplate",
+  "description": "Angular2 Boilerplate with Gulp, jspm, TypeScript, PostCSS, BrowserSync, Webpack",
+  "author": "Bob Monteverde <bob@montev.com> (http://montev.com/)",
+  "contributors": [
+    "Bob Monteverde <bob@dmontev.com> (http://montev.com/)"
+  ],
+  "homepage": "http://www.montev.com",
+  "keywords": [
+    "web",
+    "frontend",
+    "html5",
+    "angularjs",
+    "angular2",
+    "typescript",
+    "es6",
+    "jspm",
+    "systemjs",
+    "postcss",
+    "browsersync",
+    "webpack"
+  ],
+  "version": "0.0.1",
   "jspm": {
     "directories": {},
     "devDependencies": {
@@ -6,5 +28,11 @@
       "babel-runtime": "npm:babel-runtime@^5.1.13",
       "core-js": "npm:core-js@^0.9.4"
     }
+  }
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "3.9.x",
+    "gulp-help": "1.6.x",
+    "require-dir": "0.3.x"
   }
 }
