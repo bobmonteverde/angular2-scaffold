@@ -9,14 +9,19 @@
  when you run `gulp`.
 
  Principle taken from gulp-starter: https://github.com/greypants/gulp-starter
+ Principle taken from midnightLightV2: https://github.com/dsebastien/midnightLightV2
  */
 
 'use strict';
 
 import gulp from 'gulp';
-import help from 'gulp-help';
-help(gulp); // provide help through 'gulp help' -- the help text is the second gulp task argument (https://www.npmjs.com/package/gulp-help/)
 import requireDir from 'require-dir';
+import gulpLoadPlugins from 'gulp-load-plugins';
+
+const $ = gulpLoadPlugins();
+
+//import help from 'gulp-help';
+$.help(gulp); // provide help through 'gulp help' -- the help text is the second gulp task argument (https://www.npmjs.com/package/gulp-help/)
 
 
 // Load all tasks in gulp/tasks, including subfolders
