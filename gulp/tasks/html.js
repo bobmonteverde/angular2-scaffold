@@ -1,12 +1,14 @@
 'use strict';
 
 import gulp from 'gulp';
+import config from '../config';
+import utils from '../utils';
 import gulpLoadPlugins from 'gulp-load-plugins';
 
 const $ = gulpLoadPlugins();
 
-import config from '../config';
-import utils from '../utils';
+help(gulp); // provide help through 'gulp help' -- the help text is the second gulp task argument (https://www.npmjs.com/package/gulp-help/)
+
 
 gulp.task('html', 'Optimize HTML', () =>{
   return utils.plumbedSrc(
