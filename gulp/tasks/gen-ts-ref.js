@@ -12,13 +12,13 @@ $.help(gulp); // provide help through 'gulp help' -- the help text is the second
 
 
 // Generates the app.d.ts references file dynamically from all application *.ts files.
-gulp.task('gen-ts-refs', function () {
+gulp.task('gen-ts-refs', () => {
     var target = gulp.src(config.files.appTypeScriptReferences);
     var sources = gulp.src(config.typescript.srcAppOnly, {read: false});
     return target.pipe($.inject(sources, {
         starttag: '//{',
         endtag: '//}',
-        transform: function (filepath) {
+        transform: (filepath) => {
             return '/// <reference path="../..' + filepath + '" />';
         }
     })).pipe(gulp.dest(config.folders.typings));
