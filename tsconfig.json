@@ -1,0 +1,30 @@
+{
+  "version": "1.5.3",
+  "compilerOptions": {
+    "target": "es5",
+    "module": "system",
+    "declaration": false,
+    "noImplicitAny": false,
+    "removeComments": true,
+    "noLib": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "noResolve": true,
+    "noEmitOnError": false,
+    "preserveConstEnums": true,
+    "inlineSources": false,
+    "sourceMap": false,
+    "outDir": "./.tmp",
+    "project": "./app"
+  },
+  "filesGlob": [
+    "./app/**/*.ts",
+    "./typings/**/*.ts"
+   ],
+  "exclude": [
+    "node_modules",
+    "jspm_packages",
+    ".tmp"
+  ]
+}
+
