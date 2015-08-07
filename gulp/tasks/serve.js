@@ -13,7 +13,7 @@ $.help(gulp); // provide help through 'gulp help' -- the help text is the second
 
 
 // Watch files for changes & reload
-gulp.task('serve', ['styles'], function () {
+let startBrowserSync = () => {
   browserSync({
     notify: false,
     // Customize the BrowserSync console logging prefix
@@ -26,13 +26,31 @@ gulp.task('serve', ['styles'], function () {
     server: config.webServerFolders.dev
   });
 
-  //gulp.watch(['app/**/*.html'], reload);
   gulp.watch([config.html.src], browserSync.reload);
-  //gulp.watch(['app/styles/**/*.{scss,css}'], ['styles', reload]);
   gulp.watch([config.styles.src], ['styles', browserSync.reload]);
-  //gulp.watch(['app/scripts/**/*.js'], ['jshint']);
+  gulp.watch(config.typescript.srcAppOnly, [
+    //'ts-lint',
+    'scripts-typescript'
+    //'gen-ts-refs'
+  ]); // TypeScript changes will force a reload
   gulp.watch([config.javascript.src], browserSync.reload);
-  //gulp.watch(['app/images/**/*'], reload);
   gulp.watch([config.images.src], browserSync.reload);
+};
+
+
+//gulp.task('serve', 'Watch files for changes and rebuild/reload automagically', () =>{
+gulp.task('serve', () =>{
+  runSequence('prepare-serve', startBrowserSync); // here we need to ensure that all the other tasks are done before we start BrowserSync
 });
 
+
+//gulp.task('prepare-serve', 'Do all the necessary preparatory work for the serve task', (callback) =>{
+gulp.task('prepare-serve', (callback) => {
+  return runSequence([
+    //'gen-ts-refs',
+    //'scripts-javascript',
+    'scripts-typescript',
+    'styles'
+    //'validate-package-json'
+  ], callback);
+});

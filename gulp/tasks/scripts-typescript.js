@@ -11,11 +11,12 @@ const $ = gulpLoadPlugins();
 $.help(gulp); // provide help through 'gulp help' -- the help text is the second gulp task argument (https://www.npmjs.com/package/gulp-help/)
 
 
-gulp.task('scripts-typescript', 'Transpile TypeScript to ES5, include references to library and app .d.ts files and generate sourcemaps', () =>{
+//gulp.task('scripts-typescript', 'Transpile TypeScript to ES5, include references to library and app .d.ts files and generate sourcemaps', () =>{
+gulp.task('scripts-typescript', () => {
 
   // references:
   // https://www.npmjs.com/package/gulp-typescript
-  let tsProject = $.ts.createProject('tsconfig.json', {
+  let tsProject = $.typescript.createProject('tsconfig.json', {
     typescript: require('typescript'), // override the typescript version by that defined in package.json
 
     // other overrides here if needed
@@ -25,7 +26,7 @@ gulp.task('scripts-typescript', 'Transpile TypeScript to ES5, include references
 
   let tsResult = utils.plumbedSrc(config.typescript.src) // handle errors nicely (i.e., without breaking watch)
     .pipe($.sourcemaps.init())
-    .pipe($.ts(
+    .pipe($.typescript(
       tsProject
     ));
 
